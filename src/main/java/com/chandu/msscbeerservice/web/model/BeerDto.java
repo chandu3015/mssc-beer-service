@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.rmi.server.UID;
 import java.time.OffsetDateTime;
+import java.util.UUID;
 
 
 @Data
@@ -15,7 +16,7 @@ import java.time.OffsetDateTime;
 @AllArgsConstructor
 @Builder
 public class BeerDto {
-    private UID id;
+    private UUID id;
     private Integer version;
     private OffsetDateTime createdDate;
     private OffsetDateTime lastModifiedDate;
