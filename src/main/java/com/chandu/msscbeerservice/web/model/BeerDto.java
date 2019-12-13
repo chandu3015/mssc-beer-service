@@ -1,5 +1,7 @@
 package com.chandu.msscbeerservice.web.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,13 +21,17 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 public class BeerDto {
-    @Null//as we don't want client to provide beer-id
+    @JsonProperty("beerId")
+   // @Null//as we don't want client to provide beer-id
     private UUID id;
     @Null
     private Integer version;
 
+    @JsonFormat(pattern = "yyyy-MM-dd@HH:mm:ss.SSSZ",shape=JsonFormat.Shape.STRING)
     @Null
     private OffsetDateTime createdDate;
+
+    @JsonFormat(pattern = "yyyy-MM-dd@HH:mm:ss.SSSZ",shape=JsonFormat.Shape.STRING)
     @Null
     private OffsetDateTime lastModifiedDate;
     @NotBlank
@@ -34,8 +40,9 @@ public class BeerDto {
     private BeerStyleEnum beerStyle;
     @Positive
     @NotNull
-    private Long UPC;
+    private Long upc;
 
+    @JsonFormat(shape=JsonFormat.Shape.STRING)
     @Positive
     @NotNull
     private BigDecimal price;

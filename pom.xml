@@ -83,6 +83,10 @@
             <scope>test</scope>
             <exclusions>
                 <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+                <exclusion>
                     <groupId>junit</groupId>
                     <artifactId>junit</artifactId>
                 </exclusion>
@@ -108,11 +112,18 @@
         </dependency>
 
 
+
+
+
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
             <version>${mapstruct.version}</version>
         </dependency>
+
+
+
+
 
 
 
@@ -152,6 +163,10 @@
                     </compilerArgs>
                 </configuration>
             </plugin>
+
+
+
+
 
         </plugins>
     </build>

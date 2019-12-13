@@ -5,6 +5,8 @@ import com.chandu.msscbeerservice.repositories.BeerRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.boot.CommandLineRunner;
 
+import java.util.UUID;
+
 @Component
 public class BeerLoader implements  CommandLineRunner {
 
@@ -28,14 +30,17 @@ public class BeerLoader implements  CommandLineRunner {
         if(beerRepository.count()==0)
         {
             beerRepository.save(Beer.builder().beerName("miller")
-                    .beerStyle("6 pack")
+
+                    .beerStyle("LARGE")
                     .quantityToBrew(12)
                     .minOnHand(5)
+
                     .upc(351879l)
                     .build());
 
             beerRepository.save(Beer.builder().beerName("Coors")
-                    .beerStyle("2 packs")
+
+                    .beerStyle("LARGE")
                     .quantityToBrew(12)
                     .minOnHand(5)
                     .upc(351654l)
