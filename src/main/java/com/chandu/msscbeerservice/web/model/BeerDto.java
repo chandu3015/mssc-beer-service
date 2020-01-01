@@ -11,6 +11,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
 import javax.validation.constraints.Positive;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -20,7 +21,10 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class BeerDto {
+public class BeerDto  implements Serializable {
+
+    static final long serialVersionUID = -3505713437697913527L;
+
     @JsonProperty("beerId")
    // @Null//as we don't want client to provide beer-id
     private UUID id;
